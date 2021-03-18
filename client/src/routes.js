@@ -3,7 +3,6 @@ import {Switch, Route, Redirect} from 'react-router-dom'
 import {Pokemons} from "./pages/Pokemons";
 import {CaughtPokemons} from './pages/caughtPokemons';
 import {Auth} from "./pages/Auth";
-import {PokemonCard} from "./components/PokemonCard";
 import {Pokemon} from "./pages/Pokemon";
 
 export const useRoutes = isAuth => {

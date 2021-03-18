@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: #b97fc9;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+
+  li {
+    padding: 10px;
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  ul {
+    flex-direction: column;
+  }
+  li {
+    padding: 0;
+  }
+}

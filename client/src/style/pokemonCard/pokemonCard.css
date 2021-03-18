@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+.container__card {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Open Sans", sans-serif;
+}
+.container__card .card__pokemon {
+  display: flex;
+  padding-top: 40px;
+}
+.container__card .card__img img {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1), -5px -5px 5px rgba(0, 0, 0, 0.1);
+}
+.container__card .card__info {
+  width: 30%;
+  padding-left: 40px;
+}
+
+@media screen and (max-width: 767px) {
+  .container__card .card__pokemon {
+    padding-top: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    display: flex;
+  }
+  .container__card .card__img {
+    width: 100vw;
+  }
+  .container__card .card__img img {
+    width: 100vw;
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.1);
+  }
+  .container__card .card__info {
+    width: 100vw;
+  }
+}
+
+/*# sourceMappingURL=pokemonCard.css.map */

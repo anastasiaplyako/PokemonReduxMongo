@@ -1,21 +1,22 @@
-import React, {useContext} from 'react'
-import {useParams} from 'react-router-dom'
-import {useHttp} from "../hooks/http.hooks";
-import {AuthContext} from "../context/auth.context";
+import React from 'react'
+import '../style/pokemonCard/pokemonCard.scss'
 
 export const PokemonCard = (props) => {
-    const {request, loading} = useHttp();
-    const {token} = useContext(AuthContext);
     const pokemon = props.pokemon;
     const isCatch = pokemon.date;
-    console.log("pokemon", pokemon.date);
     return (
-        <div className="container">
-            <p>{pokemon.name}</p>
-            <p>{pokemon.id}</p>
-            {isCatch && <p>{pokemon.date}</p>}
-            {isCatch ? <p>Статус: пойман</p> : <p>Статус: не пойман</p>}
-            <img src={`/img/${pokemon.id}.png`} alt={"Покемон"}/>
+        <div className="container__card">
+            <div className="card__pokemon">
+                <div className="card__img">
+                    <img src={`/img/${pokemon.id}.png`} alt={"Покемон"}/>
+                </div>
+                <div className="card__info">
+                    <h3>{pokemon.name}</h3>
+                    <p>ID: {pokemon.id}</p>
+                    {isCatch && <p> Дата: {pokemon.date}</p>}
+                    {isCatch ? <p>Статус: пойман</p> : <p>Статус: не пойман</p>}
+                </div>
+            </div>
         </div>
     )
 }

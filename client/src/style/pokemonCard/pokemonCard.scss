@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+.container__card {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
+
+
+  .card {
+    &__pokemon {
+      display: flex;
+      padding-top: 40px;
+    }
+
+    &__img {
+      img {
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1),
+        -5px -5px 5px rgba(0, 0, 0, 0.1),
+      }
+    }
+
+    &__info {
+      width: 30%;
+      padding-left: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container__card {
+    .card {
+
+      &__pokemon {
+        padding-top: 0;
+        flex-wrap: wrap;
+        align-items: center;
+        display: flex;
+      }
+
+      &__img {
+        width: 100vw;
+
+        img {
+          width: 100vw;
+          box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.1);
+        }
+      }
+
+      &__info {
+        width: 100vw;
+      }
+    }
+  }
+
+}
+

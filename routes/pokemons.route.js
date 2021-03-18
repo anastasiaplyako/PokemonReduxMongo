@@ -54,14 +54,13 @@ router.get('/all', authMiddleware, async (req, res) => {
 router.get('/pokemon/:id', authMiddleware, async (req, res) => {
     try {
         const resultPokemon = {};
-        const idReq =  req.params.id.split('').slice(1).join('');
+        const idReq = req.params.id.split('').slice(1).join('');
         const userId = req.user.userId;
-        const pokemon = await Pokemons.findOne({id: idReq} )
+        const pokemon = await Pokemons.findOne({id: idReq})
         const caughtPokemons = await CaughtPokemons.findOne({userId: userId, pokemonId: idReq})
         resultPokemon.id = pokemon.id;
         resultPokemon.name = pokemon.name;
         if (caughtPokemons) {
-            console.log("DATA == ", caughtPokemons.date.toDateString())
             resultPokemon.date = caughtPokemons.date.toDateString();
         }
         res.json(resultPokemon);

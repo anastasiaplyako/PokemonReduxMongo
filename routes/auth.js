@@ -20,8 +20,8 @@ router.post("/register",
                     message: "Некорректный логин / пароль"
                 })
             }
-            const { login, password } = req.body;
-            const user = await User.findOne({ login })
+            const {login, password} = req.body;
+            const user = await User.findOne({login})
             if (user) {
                 res.status(400).json({
                     message: "Already exist"
@@ -52,6 +52,7 @@ router.post("/login",
                     message: "Некорректный логин / пароль"
                 })
             }
+            console.log("req.body = ", req.body)
             const {login, password} = req.body;
             const user = await User.findOne({login});
             if (!user) {
@@ -68,12 +69,12 @@ router.post("/login",
             }
 
             const token = jwt.sign(
-                { userId: user.id },
+                {userId: user.id},
                 config.jwtSecret,
-                { expiresIn: '1h' }
+                {expiresIn: '1h'}
             )
 
-            res.json({ token, userId: user.id })
+            res.json({token, userId: user.id})
 
         } catch (e) {
             res.status(500).json({message: "Try again"})
