@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "server": "nodemon server.js",
-    "client": "npm run start --prefix client",
+    "client": "set PORT=80 && npm run start --prefix client",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
