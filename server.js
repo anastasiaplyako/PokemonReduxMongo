@@ -3,7 +3,7 @@ const config = require("./config/default.json")
 const mongoose = require("mongoose")
 const path = require('path')
 
-const PORT = config.port || 80;
+const PORT = config.port || 8000;
 const app = express();
 
 app.use(express.json({extended: true}));
