@@ -50,7 +50,7 @@ router.get('/all', authMiddleware, async (req, res) => {
         })
     }
 })
-//idPokemons в req приходит pokemonId
+
 router.get('/pokemon/:id', authMiddleware, async (req, res) => {
     try {
         const resultPokemon = {};
@@ -71,7 +71,6 @@ router.get('/pokemon/:id', authMiddleware, async (req, res) => {
     }
 })
 
-//idUser
 router.get('/caughtPokemons', authMiddleware, async (req, res) => {
     try {
         const allPokemons = await Pokemons.find();
