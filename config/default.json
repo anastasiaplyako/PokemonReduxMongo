@@ -1,5 +1,5 @@
 {
-  "post": 8000,
+  "port": 5000,
   "jwtSecret": "anas 21",
   "mongoUri": "mongodb+srv://root:anas@cluster0.xgq1h.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
   "baseUrl": "http://pillskspt.duckdns.org"
